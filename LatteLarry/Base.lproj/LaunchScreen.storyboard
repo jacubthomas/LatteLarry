@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,25 +14,116 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="center" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="wo0-uU-1zt">
-                                <rect key="frame" x="-5" y="0.0" width="407" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Let's roast some beans!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="g6s-ab-FHF">
-                                <rect key="frame" x="0.0" y="199" width="393" height="852"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="xH6-jY-TF3"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="80Y-Oq-men"/>
-                                <color key="textColor" red="0.80784313730000001" green="0.90196078430000004" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="78"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vlk-mo-NYz">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="wo0-uU-1zt">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="TrM-8E-yV7">
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kQR-Lt-6pw">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="170.5"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="60"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                                                </variation>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Let's" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="D1M-jK-Zn7">
+                                                <rect key="frame" x="0.0" y="170.5" width="768" height="171"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="75"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                                                </variation>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Roast" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="GF0-Ib-m7v">
+                                                <rect key="frame" x="0.0" y="341.5" width="768" height="170.5"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="75"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                                                </variation>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Some" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="yhO-se-S9a">
+                                                <rect key="frame" x="0.0" y="512" width="768" height="170.5"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="75"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                                                </variation>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Beans!" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="rG1-7l-rJX">
+                                                <rect key="frame" x="0.0" y="682.5" width="768" height="171"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="75"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                                                </variation>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZUI-7L-Six">
+                                                <rect key="frame" x="0.0" y="853.5" width="768" height="170.5"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="60"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <variation key="heightClass=compact-widthClass=compact">
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="35"/>
+                                                </variation>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="kQR-Lt-6pw" secondAttribute="trailing" id="2Ud-ad-0KR"/>
+                                            <constraint firstItem="rG1-7l-rJX" firstAttribute="leading" secondItem="TrM-8E-yV7" secondAttribute="leading" id="2zA-ZX-PVv"/>
+                                            <constraint firstItem="kQR-Lt-6pw" firstAttribute="top" secondItem="TrM-8E-yV7" secondAttribute="top" id="5bB-UU-hUB"/>
+                                            <constraint firstAttribute="trailing" secondItem="D1M-jK-Zn7" secondAttribute="trailing" id="6f3-2E-wHj"/>
+                                            <constraint firstItem="rG1-7l-rJX" firstAttribute="top" secondItem="yhO-se-S9a" secondAttribute="bottom" id="8W9-Da-7xD"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZUI-7L-Six" secondAttribute="bottom" id="9CF-IG-9Cu"/>
+                                            <constraint firstItem="D1M-jK-Zn7" firstAttribute="leading" secondItem="TrM-8E-yV7" secondAttribute="leading" id="GH6-c7-Zki"/>
+                                            <constraint firstItem="kQR-Lt-6pw" firstAttribute="leading" secondItem="TrM-8E-yV7" secondAttribute="leading" id="IOr-ow-iqG"/>
+                                            <constraint firstItem="yhO-se-S9a" firstAttribute="leading" secondItem="TrM-8E-yV7" secondAttribute="leading" id="L6q-7G-fc0"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZUI-7L-Six" secondAttribute="trailing" id="ZPx-MX-hkv"/>
+                                            <constraint firstAttribute="trailing" secondItem="GF0-Ib-m7v" secondAttribute="trailing" id="aC0-wj-2ff"/>
+                                            <constraint firstAttribute="trailing" secondItem="rG1-7l-rJX" secondAttribute="trailing" id="gj5-7i-rcz"/>
+                                            <constraint firstItem="GF0-Ib-m7v" firstAttribute="top" secondItem="D1M-jK-Zn7" secondAttribute="bottom" id="ip4-Wy-zMx"/>
+                                            <constraint firstAttribute="trailing" secondItem="yhO-se-S9a" secondAttribute="trailing" id="kgi-b6-xPp"/>
+                                            <constraint firstItem="yhO-se-S9a" firstAttribute="top" secondItem="GF0-Ib-m7v" secondAttribute="bottom" id="sNy-hb-UuY"/>
+                                            <constraint firstItem="GF0-Ib-m7v" firstAttribute="leading" secondItem="TrM-8E-yV7" secondAttribute="leading" id="sva-Bw-AZk"/>
+                                            <constraint firstItem="D1M-jK-Zn7" firstAttribute="top" secondItem="kQR-Lt-6pw" secondAttribute="bottom" id="z3x-Xb-ZnP"/>
+                                            <constraint firstItem="ZUI-7L-Six" firstAttribute="top" secondItem="rG1-7l-rJX" secondAttribute="bottom" id="z7k-Vr-8Tr"/>
+                                            <constraint firstItem="ZUI-7L-Six" firstAttribute="leading" secondItem="TrM-8E-yV7" secondAttribute="leading" id="zbb-gY-a9h"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="TrM-8E-yV7" firstAttribute="leading" secondItem="Vlk-mo-NYz" secondAttribute="leading" id="2ja-As-wQU"/>
+                                    <constraint firstAttribute="trailing" secondItem="wo0-uU-1zt" secondAttribute="trailing" id="5Mf-ih-Ees"/>
+                                    <constraint firstItem="TrM-8E-yV7" firstAttribute="top" secondItem="Vlk-mo-NYz" secondAttribute="top" id="BjN-Ou-aQh"/>
+                                    <constraint firstAttribute="trailing" secondItem="TrM-8E-yV7" secondAttribute="trailing" id="DiO-fD-3vL"/>
+                                    <constraint firstAttribute="bottom" secondItem="wo0-uU-1zt" secondAttribute="bottom" id="KPn-Vk-XXD"/>
+                                    <constraint firstAttribute="bottom" secondItem="TrM-8E-yV7" secondAttribute="bottom" id="Ymx-Lc-lGy"/>
+                                    <constraint firstItem="wo0-uU-1zt" firstAttribute="top" secondItem="Vlk-mo-NYz" secondAttribute="top" id="be7-0c-xBx"/>
+                                    <constraint firstItem="wo0-uU-1zt" firstAttribute="leading" secondItem="Vlk-mo-NYz" secondAttribute="leading" id="kwt-If-7Ax"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Vlk-mo-NYz" firstAttribute="bottom" secondItem="Ze5-6b-2t3" secondAttribute="bottom" id="1sV-oR-8YI"/>
+                            <constraint firstItem="Vlk-mo-NYz" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailing" id="G12-2j-S9x"/>
+                            <constraint firstItem="Vlk-mo-NYz" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="b2d-OX-Ois"/>
+                            <constraint firstItem="Vlk-mo-NYz" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ubA-Av-Cc4"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -40,7 +132,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="1629.6666259765625" height="1242.6666259765625"/>
+        <image name="Image" width="320" height="244"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
