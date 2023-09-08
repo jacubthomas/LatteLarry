@@ -10,65 +10,117 @@ import UIKit
 class ViewController: UIViewController {
 
     let resetTime = "00:00"
-    
     var started = false
-    
-    var timer = Timer()
-    
     var startTime = Date()
+    var pausedTime = Date()
+    var sumPausedTime : Int = 0
+    var lastSumRunTime : Int = 0
+    var sumRunTime : Int = 0
+    var runningTimer = Timer()
+    var pausedTimer = Timer()
+    var pausedTimeArray = [Date]()
+    var runningTimeArray = [Date]()
     
     @objc func fireTimer() {
-        txtTimer.text = "\(convertSecondsToMinSecs())"
+            calculateRuntime()
+            txtTimer.text = "\(convertSecondsToMinSecs(dateTime: (startTime)))"
+    }
+    
+    func handlePause() {
+        sumPausedTime = 0
+        if pausedTimeArray.count % 2 == 0
+        {
+            for i in 0...pausedTimeArray.count-1 {
+                if i % 2 != 0 {
+                    continue
+                } else {
+                    sumPausedTime += Int(floor(pausedTimeArray[i].distance(to: pausedTimeArray[i+1])))
+                }
+            }
+            print ("sumPausedTime = \(sumPausedTime)")
+        }
+        
+    }
+    
+    func calculateRuntime() {
+        sumRunTime = 0
+        if (runningTimeArray.count > 1)
+        {
+            sumRunTime = Int(floor(runningTimeArray[runningTimeArray.count-1].distance(to: Date()))) + lastSumRunTime
+        } else if (runningTimeArray.count == 1) {
+            sumRunTime = Int(floor(runningTimeArray[0].distance(to: Date())))
+        }
+        print ("sumRunTime = \(sumRunTime)")
+        
     }
 
-    @IBOutlet var actualStartBtn: UIButton!
-    @IBAction func btnStart(_ sender: UIButton) {
+    @IBOutlet var txtTimer: UITextField!
+    @IBOutlet var btnStart: UIButton!
+    @IBOutlet var btnResetEnd: UIButton!
+    @IBAction func started(_ sender: UIButton) {
         if (started == false) {
             
             // mark started so next button press leverages reset logic
             started = true
-            
-            // update start button to reset
-            actualStartBtn.setTitle("Reset",
+            // update start button to pause
+            btnStart.setTitle("Pause Timer",
                                     for: UIControl.State())
             
             // mark time of start - to be referenced for running clock
             startTime = Date()
+            runningTimeArray.append(startTime)
+            
+            if (pausedTimeArray.count > 0) {
+                pausedTimeArray.append(startTime)
+                handlePause()
+            }
             
             // kick off timer which updates clock and data points every second
-            timer = Timer.scheduledTimer(timeInterval: 1.0,
+            runningTimer = Timer.scheduledTimer(timeInterval: 1.0,
                                          target: self,
                                          selector: #selector(ViewController.fireTimer),
                                          userInfo: nil,
                                          repeats: true)
         } else {
             started = false
-            actualStartBtn.setTitle("Start",
+            runningTimer.invalidate()
+            
+            // mark time of pause - to be referenced for running clock
+            pausedTime = Date()
+            pausedTimeArray.append(pausedTime)
+            lastSumRunTime = sumRunTime
+            btnStart.setTitle("Start Timer",
                                     for: UIControl.State())
-            txtTimer.text = resetTime
-            timer.invalidate()
         }
     }
     
-    @IBAction func btnWeightLoss(_ sender: UIButton) {
-        print ("HI")
+    @IBAction func reset(_ sender: UIButton) {
+        // reset timer to 00:00 and stop clock
+        started = false
+        txtTimer.text = resetTime
+        runningTimer.invalidate()
+        
+        pausedTimeArray.removeAll()
+        runningTimeArray.removeAll()
+        
+        // update start button to pause
+        btnStart.setTitle("Start Timer",
+                                for: UIControl.State())
     }
-    @IBAction func btnFirstCrack(_ sender: UIButton) {
-        print ("HEY")
-    }
-    
-    @IBOutlet var txtTimer: UITextField!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    func convertSecondsToMinSecs() -> String {
+    func convertSecondsToMinSecs(dateTime: Date) -> String {
         
         // get diff in time since start
-        let timeDiff = floor(startTime.distance(to: Date()))
+//        var timeDiff = floor(dateTime.distance(to: Date()))
+        let timeDiff = Double(sumRunTime)
+        print ("timeDiff = \(timeDiff) ; sumPausedTime = \(sumPausedTime)")
+//        timeDiff -= Double(sumPausedTime)
+        
         
         let mins = Int(floor(timeDiff / 60))
         let seconds = Int(timeDiff) % 60
@@ -96,42 +148,11 @@ class ViewController: UIViewController {
         return "\(minString):\(secString)"
     }
 
-    @IBAction func doneEditing(_ sender: UITextField) {
+    @IBAction func endEditing(_ sender: UITextField) {
         sender.resignFirstResponder()
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
+            self.view.endEditing(true)
+            return false
     }
-
 }
-
-
-
-/*
- ~~~ OLD FIRE TIMER ~~~
- //        // Handle rollover into new minute
- //        if (seconds == 59) {
- //            seconds = 0
- //            mins = mins + 1
- //        } else {
- //            seconds = seconds + 1
- //        }
- //
- //        var minuteString = "00"
- //        var secondString = "00"
- //        if (mins < 10) {
- //            minuteString = "0\(mins)"
- //        } else {
- //            minuteString = "\(mins)"
- //        }
- //        if (seconds < 10) {
- //            secondString = "0\(seconds)"
- //        } else {
- //            secondString = "\(seconds)"
- //        }
- //
- //        // Update timer
- //        txtTimer.text = "\(minuteString):\(secondString)"
- */

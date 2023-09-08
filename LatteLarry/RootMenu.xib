@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Viw-lF-aBL">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKa-SE-Sxe" userLabel="titleView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="m6Z-g6-8DN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0gG-xF-f25">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ct-8I-t2B" userLabel="blankView">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="27"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N3p-Vm-aFz">
+                                                    <rect key="frame" x="5" y="-6.5" width="310" height="39.5"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="55"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <variation key="heightClass=compact-widthClass=compact">
+                                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="22"/>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <fontDescription key="fontDescription" name="Helvetica-Light" family="Helvetica" pointSize="33"/>
+                                                    </variation>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="N3p-Vm-aFz" firstAttribute="leading" secondItem="2ct-8I-t2B" secondAttribute="leading" constant="5" id="Dkb-Ks-CUj"/>
+                                                <constraint firstAttribute="trailing" secondItem="N3p-Vm-aFz" secondAttribute="trailing" constant="5" id="FZJ-Ew-Yjf"/>
+                                                <constraint firstItem="N3p-Vm-aFz" firstAttribute="centerY" secondItem="2ct-8I-t2B" secondAttribute="centerY" id="oXx-Ux-dC3"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kyk-38-kc3" userLabel="coffeeRoastingView">
+                                            <rect key="frame" x="0.0" y="27" width="320" height="26.5"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1B9-7g-zaj">
+                                                    <rect key="frame" x="5" y="-6.5" width="310" height="39.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Coffee Roasting">
+                                                            <attributes>
+                                                                <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                <font key="NSFont" size="55" name="Helvetica-Light"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <variation key="heightClass=compact-widthClass=compact">
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Coffee Roasting">
+                                                                <attributes>
+                                                                    <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="22" name="Helvetica-Light"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Coffee Roasting">
+                                                                <attributes>
+                                                                    <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                    <font key="NSFont" size="33" name="Helvetica-Light"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </variation>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1B9-7g-zaj" firstAttribute="leading" secondItem="kyk-38-kc3" secondAttribute="leading" constant="5" id="RZ1-Le-hXZ"/>
+                                                <constraint firstItem="1B9-7g-zaj" firstAttribute="centerY" secondItem="kyk-38-kc3" secondAttribute="centerY" id="SwE-BE-IvY"/>
+                                                <constraint firstAttribute="trailing" secondItem="1B9-7g-zaj" secondAttribute="trailing" constant="5" id="v9l-Kw-QgI"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-oZ-Y1w" userLabel="developmentTimerView">
+                                            <rect key="frame" x="0.0" y="53.5" width="320" height="27"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hig-Y1-b6H">
+                                                    <rect key="frame" x="5" y="-6.5" width="310" height="39.5"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Development Timer">
+                                                            <attributes>
+                                                                <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <font key="NSFont" size="55" name="Helvetica-Light"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <variation key="heightClass=compact-widthClass=compact">
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Development Timer">
+                                                                <attributes>
+                                                                    <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <font key="NSFont" size="22" name="Helvetica-Light"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <attributedString key="attributedText">
+                                                            <fragment content="Development Timer">
+                                                                <attributes>
+                                                                    <color key="NSBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <font key="NSFont" size="33" name="Helvetica-Light"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                </attributes>
+                                                            </fragment>
+                                                        </attributedString>
+                                                    </variation>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hig-Y1-b6H" firstAttribute="leading" secondItem="A4p-oZ-Y1w" secondAttribute="leading" constant="5" id="Lo4-Ys-g6h"/>
+                                                <constraint firstItem="Hig-Y1-b6H" firstAttribute="centerY" secondItem="A4p-oZ-Y1w" secondAttribute="centerY" id="gPR-ao-XUm"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hig-Y1-b6H" secondAttribute="trailing" constant="5" id="rzs-ht-I3s"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="m6Z-g6-8DN" firstAttribute="top" secondItem="LKa-SE-Sxe" secondAttribute="top" id="HJr-lN-NWL"/>
+                                <constraint firstItem="0gG-xF-f25" firstAttribute="trailing" secondItem="LKa-SE-Sxe" secondAttribute="trailing" id="YOb-mS-Cvc"/>
+                                <constraint firstItem="m6Z-g6-8DN" firstAttribute="trailing" secondItem="LKa-SE-Sxe" secondAttribute="trailing" id="cbe-6W-ICc"/>
+                                <constraint firstItem="m6Z-g6-8DN" firstAttribute="bottom" secondItem="LKa-SE-Sxe" secondAttribute="bottom" id="ecn-b8-weT"/>
+                                <constraint firstItem="0gG-xF-f25" firstAttribute="leading" secondItem="LKa-SE-Sxe" secondAttribute="leading" id="exI-sU-Nop"/>
+                                <constraint firstAttribute="bottom" secondItem="0gG-xF-f25" secondAttribute="bottom" id="ezY-c3-urS"/>
+                                <constraint firstItem="m6Z-g6-8DN" firstAttribute="leading" secondItem="LKa-SE-Sxe" secondAttribute="leading" id="ySP-6t-joT"/>
+                                <constraint firstItem="0gG-xF-f25" firstAttribute="top" secondItem="LKa-SE-Sxe" secondAttribute="top" id="zTW-Kn-S3A"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7K-eU-TDv" userLabel="button1View">
+                            <rect key="frame" x="0.0" y="81.5" width="320" height="80"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aHR-JU-IrN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="RDT Timer">
+                                        <fontDescription key="titleFontDescription" name="Helvetica-Light" family="Helvetica" pointSize="30"/>
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="baseBackgroundColor" red="0.43529411764705883" green="0.60392156862745094" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.43529411759999997" green="0.60392156860000001" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="aHR-JU-IrN" firstAttribute="top" secondItem="S7K-eU-TDv" secondAttribute="top" id="DdB-5L-2jb"/>
+                                <constraint firstItem="aHR-JU-IrN" firstAttribute="leading" secondItem="S7K-eU-TDv" secondAttribute="leading" id="HQP-Q3-BjE"/>
+                                <constraint firstAttribute="trailing" secondItem="aHR-JU-IrN" secondAttribute="trailing" id="aJF-Ea-Cio"/>
+                                <constraint firstAttribute="bottom" secondItem="aHR-JU-IrN" secondAttribute="bottom" id="p71-is-1xZ"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKM-7e-QJX" userLabel="button2View">
+                            <rect key="frame" x="0.0" y="162.5" width="320" height="80.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMC-iX-CMS">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Roast Profiles">
+                                        <fontDescription key="titleFontDescription" name="Helvetica-Light" family="Helvetica" pointSize="30"/>
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="baseBackgroundColor" red="0.70196078431372544" green="0.78431372549019607" blue="0.56470588235294117" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.70196078429999997" green="0.7843137255" blue="0.56470588239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="cMC-iX-CMS" secondAttribute="trailing" id="apt-hL-48M"/>
+                                <constraint firstAttribute="bottom" secondItem="cMC-iX-CMS" secondAttribute="bottom" id="bhA-cm-z4n"/>
+                                <constraint firstItem="cMC-iX-CMS" firstAttribute="top" secondItem="zKM-7e-QJX" secondAttribute="top" id="fvC-vt-DFW"/>
+                                <constraint firstItem="cMC-iX-CMS" firstAttribute="leading" secondItem="zKM-7e-QJX" secondAttribute="leading" id="rmP-oF-F7l"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhV-7N-5L7" userLabel="button3View">
+                            <rect key="frame" x="0.0" y="244" width="320" height="80"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Um-0n-dre">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Espresso Log">
+                                        <fontDescription key="titleFontDescription" name="Helvetica-Light" family="Helvetica" pointSize="30"/>
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="baseBackgroundColor" red="0.87450980389999999" green="0.6588235294" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.87450980389999999" green="0.6588235294" blue="0.47058823529999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="6Um-0n-dre" secondAttribute="trailing" id="8KT-Su-Xhe"/>
+                                <constraint firstItem="6Um-0n-dre" firstAttribute="top" secondItem="MhV-7N-5L7" secondAttribute="top" id="D3j-lM-sWp"/>
+                                <constraint firstItem="6Um-0n-dre" firstAttribute="leading" secondItem="MhV-7N-5L7" secondAttribute="leading" id="MDf-QI-UgJ"/>
+                                <constraint firstAttribute="bottom" secondItem="6Um-0n-dre" secondAttribute="bottom" id="aZe-9M-z6O"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNd-e8-qQH" userLabel="button4View">
+                            <rect key="frame" x="0.0" y="325" width="320" height="80.5"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxN-bk-brN">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Espresso Profiles">
+                                        <fontDescription key="titleFontDescription" name="Helvetica-Light" family="Helvetica" pointSize="30"/>
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="baseBackgroundColor" red="0.72941176470588232" green="0.4392156862745098" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.72941176470000002" green="0.43921568630000002" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="OxN-bk-brN" firstAttribute="leading" secondItem="dNd-e8-qQH" secondAttribute="leading" id="0St-cC-cIw"/>
+                                <constraint firstItem="OxN-bk-brN" firstAttribute="top" secondItem="dNd-e8-qQH" secondAttribute="top" id="DAN-uq-fxs"/>
+                                <constraint firstAttribute="trailing" secondItem="OxN-bk-brN" secondAttribute="trailing" id="H1q-RG-RsO"/>
+                                <constraint firstAttribute="bottom" secondItem="OxN-bk-brN" secondAttribute="bottom" id="fJc-ib-VUG"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bw2-va-Afj" userLabel="button5View">
+                            <rect key="frame" x="0.0" y="406.5" width="320" height="80"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CB6-8L-R9r">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="filled" title="Brew &amp; End Time Calculators">
+                                        <fontDescription key="titleFontDescription" name="Helvetica-Light" family="Helvetica" pointSize="30"/>
+                                        <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="baseBackgroundColor" red="0.42352941176470588" green="0.20392156862745098" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.42352941179999998" green="0.20392156859999999" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="CB6-8L-R9r" secondAttribute="bottom" id="2Pi-56-Oeu"/>
+                                <constraint firstAttribute="trailing" secondItem="CB6-8L-R9r" secondAttribute="trailing" id="T6I-aB-n2Z"/>
+                                <constraint firstItem="CB6-8L-R9r" firstAttribute="leading" secondItem="bw2-va-Afj" secondAttribute="leading" id="lkL-fU-fK7"/>
+                                <constraint firstItem="CB6-8L-R9r" firstAttribute="top" secondItem="bw2-va-Afj" secondAttribute="top" id="sm4-vS-K04"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xos-nx-7qG" userLabel="footerView">
+                            <rect key="frame" x="0.0" y="487.5" width="320" height="80.5"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="p7t-Wd-qfb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80.5"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="p7t-Wd-qfb" secondAttribute="trailing" id="6XR-0x-BoR"/>
+                                <constraint firstItem="p7t-Wd-qfb" firstAttribute="leading" secondItem="Xos-nx-7qG" secondAttribute="leading" id="Fft-30-f3o"/>
+                                <constraint firstAttribute="bottom" secondItem="p7t-Wd-qfb" secondAttribute="bottom" id="Jnd-KF-gLO"/>
+                                <constraint firstItem="p7t-Wd-qfb" firstAttribute="top" secondItem="Xos-nx-7qG" secondAttribute="top" id="jbP-Of-aGS"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="dNd-e8-qQH" firstAttribute="leading" secondItem="Viw-lF-aBL" secondAttribute="leading" id="0pw-nS-NZI"/>
+                        <constraint firstItem="zKM-7e-QJX" firstAttribute="bottom" secondItem="MhV-7N-5L7" secondAttribute="top" id="2gF-n9-aql"/>
+                        <constraint firstItem="MhV-7N-5L7" firstAttribute="trailing" secondItem="Viw-lF-aBL" secondAttribute="trailing" id="3sb-VF-7Hx"/>
+                        <constraint firstItem="zKM-7e-QJX" firstAttribute="top" secondItem="S7K-eU-TDv" secondAttribute="bottom" id="4t3-Et-6A9"/>
+                        <constraint firstItem="dNd-e8-qQH" firstAttribute="top" secondItem="MhV-7N-5L7" secondAttribute="bottom" id="4xc-Gw-o3C"/>
+                        <constraint firstItem="dNd-e8-qQH" firstAttribute="bottom" secondItem="bw2-va-Afj" secondAttribute="top" id="6wW-4L-qCP"/>
+                        <constraint firstItem="bw2-va-Afj" firstAttribute="trailing" secondItem="Viw-lF-aBL" secondAttribute="trailing" id="71v-us-Zpd"/>
+                        <constraint firstItem="bw2-va-Afj" firstAttribute="top" secondItem="dNd-e8-qQH" secondAttribute="bottom" id="EOc-YP-fMz"/>
+                        <constraint firstItem="zKM-7e-QJX" firstAttribute="leading" secondItem="Viw-lF-aBL" secondAttribute="leading" id="Fzw-2u-nNn"/>
+                        <constraint firstItem="Xos-nx-7qG" firstAttribute="trailing" secondItem="Viw-lF-aBL" secondAttribute="trailing" id="J62-7A-lze"/>
+                        <constraint firstItem="dNd-e8-qQH" firstAttribute="trailing" secondItem="Viw-lF-aBL" secondAttribute="trailing" id="PJH-wY-YJM"/>
+                        <constraint firstItem="S7K-eU-TDv" firstAttribute="leading" secondItem="Viw-lF-aBL" secondAttribute="leading" id="RpR-1g-te2"/>
+                        <constraint firstItem="MhV-7N-5L7" firstAttribute="leading" secondItem="Viw-lF-aBL" secondAttribute="leading" id="SQn-NW-7ca"/>
+                        <constraint firstItem="zKM-7e-QJX" firstAttribute="trailing" secondItem="Viw-lF-aBL" secondAttribute="trailing" id="Sye-6r-LXr"/>
+                        <constraint firstItem="S7K-eU-TDv" firstAttribute="trailing" secondItem="Viw-lF-aBL" secondAttribute="trailing" id="chB-Bd-lhM"/>
+                        <constraint firstItem="MhV-7N-5L7" firstAttribute="top" secondItem="zKM-7e-QJX" secondAttribute="bottom" id="izj-3D-gTt"/>
+                        <constraint firstItem="bw2-va-Afj" firstAttribute="leading" secondItem="Viw-lF-aBL" secondAttribute="leading" id="mbd-yC-HzW"/>
+                        <constraint firstItem="Xos-nx-7qG" firstAttribute="top" secondItem="bw2-va-Afj" secondAttribute="bottom" id="p7O-TJ-0PJ"/>
+                        <constraint firstItem="Xos-nx-7qG" firstAttribute="bottom" secondItem="Viw-lF-aBL" secondAttribute="bottom" id="plp-oA-Hxe"/>
+                        <constraint firstItem="Xos-nx-7qG" firstAttribute="leading" secondItem="Viw-lF-aBL" secondAttribute="leading" id="qTe-on-A5L"/>
+                        <constraint firstItem="S7K-eU-TDv" firstAttribute="top" secondItem="LKa-SE-Sxe" secondAttribute="bottom" id="ssE-kO-u6y"/>
+                    </constraints>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Viw-lF-aBL" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="3cN-ov-2J3"/>
+                <constraint firstItem="Viw-lF-aBL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="NDw-yg-5lp"/>
+                <constraint firstItem="Viw-lF-aBL" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="S4a-fI-p5C"/>
+                <constraint firstItem="Viw-lF-aBL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eLr-HX-xPZ"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Image" width="320" height="244"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
