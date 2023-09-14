@@ -5,6 +5,7 @@ class ViewControllerRDTTimer: ViewController {
     // local variables
     let resetTime = "00:00"
     var started = false
+    var cracked = false
     var startTime = Date()
     var pausedTime = Date()
     var sumPausedTime : Int = 0
@@ -15,6 +16,8 @@ class ViewControllerRDTTimer: ViewController {
     var pausedTimeArray = [Date]()
     var runningTimeArray = [Date]()
     var farenheitOrCelsius = "Farenheit"
+    var yellowPhaseTime = Date()
+    var firstCrackTime = Date()
     
     // ui components
     @IBOutlet var viewTopBanner: UIView!
@@ -27,17 +30,24 @@ class ViewControllerRDTTimer: ViewController {
     @IBOutlet var txtTimer: UITextField!
     @IBOutlet var statsScrollView: UIScrollView!
     @IBOutlet var scrollViewStack: UIStackView!
+    @IBOutlet var percent14: UITextField!
+    @IBOutlet var percent16: UITextField!
+    @IBOutlet var percent18: UITextField!
+    @IBOutlet var percent20: UITextField!
+    @IBOutlet var percent22: UITextField!
+    @IBOutlet var percent24: UITextField!
     @IBOutlet var btnFarenheitCelsius: UIButton!
     @IBOutlet var textFarenheitCelsius: UITextField!
     @IBOutlet var viewBottomBanner: UIView!
     @IBOutlet var valYellowPhase: UITextField!
-    @IBOutlet var valMallardPhase: UITextField!
+    @IBOutlet var valMaillardPhase: UITextField!
     @IBOutlet var valFirstCrack: UITextField!
     @IBOutlet var valSecondCrack: UITextField!
     @IBOutlet var preheatTemp: UITextField!
     @IBOutlet var greenWeight: UITextField!
     @IBOutlet var endWeight: UITextField!
     @IBOutlet var weightLoss: UITextField!
+    @IBOutlet var sumRoastTime: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +55,7 @@ class ViewControllerRDTTimer: ViewController {
         txtTimer.delegate = self
         textFarenheitCelsius.delegate = self
         valYellowPhase.delegate = self
-        valMallardPhase.delegate = self
+        valMaillardPhase.delegate = self
         valFirstCrack.delegate = self
         valSecondCrack.delegate = self
         preheatTemp.delegate = self
@@ -60,6 +70,8 @@ class ViewControllerRDTTimer: ViewController {
     @objc func fireTimer() {
         calculateRuntime()
         txtTimer.text = "\(convertSecondsToMinSecs(dateTime: (startTime)))"
+        sumRoastTime.text = txtTimer.text
+        crackedCalculations()
     }
     
     // sum all intervals clock has been paused since start and store for reference
@@ -211,10 +223,29 @@ class ViewControllerRDTTimer: ViewController {
     // Capture milestones when user presses associated button
     @IBAction func yellowPhasePressed(_ sender: UIButton) {
         valYellowPhase.text = txtTimer.text
+        yellowPhaseTime = Date()
     }
     @IBAction func firstCrackPressed(_ sender: UIButton) {
         valFirstCrack.text = txtTimer.text
+        firstCrackTime = Date()
+        var timeDiff = Int(floor(yellowPhaseTime.distance(to: firstCrackTime)))
+        
+        // extract & format minutes elapsed
+        let mins = Int(floor(Double(timeDiff) / 60))
+        
+        // extract & format seconds elapsed
+        let seconds = Int(timeDiff) % 60
+        
+        print ("YP: \(yellowPhaseTime), FC: \(firstCrackTime), TD: \(timeDiff), Mins: \(mins), Secs: \(seconds)")
+        
+        var maillardMin = (mins < 10) ? "0" + String(mins) : String(mins)
+        var maillardSec = (seconds < 10) ? "0" + String(seconds) : String(seconds)
+        
+        valMaillardPhase.text = "\(maillardMin):\(maillardSec)"
+        
+        cracked = true
     }
+    
     @IBAction func secondCrackPressed(_ sender: UIButton) {
         valSecondCrack.text = txtTimer.text
     }
@@ -233,9 +264,52 @@ class ViewControllerRDTTimer: ViewController {
         let gw = Int(greenWeight.text!) ?? 0
         let ew = Int(endWeight.text!) ?? 0
         
-        let wL = gw - ew
-        
-        weightLoss.text = String(wL)
+        if (gw != 0) {
+            let wL = String(floor(((Double(gw - ew)) / Double(gw)) * 100)) + "%"
+            weightLoss.text = wL
+        }
+    }
+    
+    func crackedCalculations() {
+        if (cracked) {
+            let rawPercent14 = floor(Double(sumRunTime) / 0.86) + 1
+            let min14 = Int(floor(Double(rawPercent14)/60))
+            let sec14 = Int(floor(rawPercent14)) % 60
+            let str14Min = (min14 < 10) ? "0" + String(min14) : String(min14)
+            let str14Sec = (sec14 < 10) ? "0" + String(sec14) : String(sec14)
+            percent14.text = "\(str14Min):\(str14Sec)"
+            let rawPercent16 = floor(Double(sumRunTime) / 0.84) + 1
+            let min16 = Int(floor(Double(rawPercent16)/60))
+            let sec16 = Int(floor(rawPercent16)) % 60
+            let str16Min = (min16 < 10) ? "0" + String(min16) : String(min16)
+            let str16Sec = (sec16 < 10) ? "0" + String(sec16) : String(sec16)
+            percent16.text = "\(str16Min):\(str16Sec)"
+            let rawPercent18 = floor(Double(sumRunTime) / 0.82) + 1
+            let min18 = Int(floor(Double(rawPercent18)/60))
+            let sec18 = Int(floor(rawPercent18)) % 60
+            let str18Min = (min18 < 10) ? "0" + String(min18) : String(min18)
+            let str18Sec = (sec18 < 10) ? "0" + String(sec18) : String(sec18)
+            percent18.text = "\(str18Min):\(str18Sec)"
+            let rawPercent20 = floor(Double(sumRunTime) / 0.80) + 1
+            let min20 = Int(floor(Double(rawPercent20)/60))
+            let sec20 = Int(floor(rawPercent20)) % 60
+            let str20Min = (min20 < 10) ? "0" + String(min20) : String(min20)
+            let str20Sec = (sec20 < 10) ? "0" + String(sec20) : String(sec20)
+            percent20.text = "\(str20Min):\(str20Sec)"
+            let rawPercent22 = floor(Double(sumRunTime) / 0.78) + 1
+            let min22 = Int(floor(Double(rawPercent22)/60))
+            let sec22 = Int(floor(rawPercent22)) % 60
+            let str22Min = (min22 < 10) ? "0" + String(min22) : String(min22)
+            let str22Sec = (sec22 < 10) ? "0" + String(sec22) : String(sec22)
+            percent22.text = "\(str22Min):\(str22Sec)"
+            let rawPercent24 = floor(Double(sumRunTime) / 0.76) + 1
+            let min24 = Int(floor(Double(rawPercent24)/60))
+            let sec24 = Int(floor(rawPercent24)) % 60
+            let str24Min = (min24 < 10) ? "0" + String(min24) : String(min24)
+            let str24Sec = (sec24 < 10) ? "0" + String(sec24) : String(sec24)
+            percent24.text = "\(str24Min):\(str24Sec)"
+            cracked = false
+        }
     }
 }
 

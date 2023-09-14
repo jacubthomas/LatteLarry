@@ -1382,6 +1382,9 @@
                                                                                                 <variation key="heightClass=compact-widthClass=compact">
                                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                                 </variation>
+                                                                                                <connections>
+                                                                                                    <action selector="weightChanged:" destination="Kpp-4A-Pib" eventType="editingDidEnd" id="7WR-Om-PE7"/>
+                                                                                                </connections>
                                                                                             </textField>
                                                                                         </subviews>
                                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1643,7 +1646,7 @@
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFC-kr-M30" userLabel="weightS2R2">
                                                                                 <rect key="frame" x="0.0" y="100" width="217.33333333333334" height="100"/>
                                                                                 <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mallard Phase:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tu8-cH-9rr">
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maillard Phase:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tu8-cH-9rr">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="217.33333333333334" height="100"/>
                                                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="25"/>
                                                                                         <color key="textColor" red="0.42352941179999998" green="0.20392156859999999" blue="0.15686274510000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2396,13 +2399,20 @@
                         <outlet property="btnYellowPhase" destination="RhI-Vs-uhU" id="wZV-gi-XRE"/>
                         <outlet property="endWeight" destination="lRC-RC-wIS" id="KLa-ow-FSb"/>
                         <outlet property="greenWeight" destination="uRI-uF-vmu" id="bdM-oW-1Gr"/>
+                        <outlet property="percent14" destination="69i-KW-6yi" id="X7k-PH-N6G"/>
+                        <outlet property="percent16" destination="rXq-fR-I7f" id="IXM-QB-H7E"/>
+                        <outlet property="percent18" destination="Lma-Vq-ReI" id="hjn-wj-jDp"/>
+                        <outlet property="percent20" destination="M7N-73-3Hv" id="mjP-yW-Dgv"/>
+                        <outlet property="percent22" destination="OFa-pQ-O1D" id="pDR-k5-nTw"/>
+                        <outlet property="percent24" destination="iAK-km-D2M" id="YGr-3o-dbB"/>
                         <outlet property="preheatTemp" destination="bH9-Wb-BCu" id="auZ-gy-f8L"/>
                         <outlet property="scrollViewStack" destination="OMY-wV-J9p" id="id3-YO-Wdd"/>
                         <outlet property="statsScrollView" destination="0QU-W3-nGM" id="lmT-xt-0Oy"/>
+                        <outlet property="sumRoastTime" destination="c90-dK-yAT" id="rQS-Yp-A7o"/>
                         <outlet property="textFarenheitCelsius" destination="dyz-25-CjF" id="Mpa-1D-qNM"/>
                         <outlet property="txtTimer" destination="Ouy-eG-lLv" id="rcB-Kz-siq"/>
                         <outlet property="valFirstCrack" destination="sSe-mb-Nul" id="pbl-hm-nG7"/>
-                        <outlet property="valMallardPhase" destination="rAy-0n-0mg" id="C24-6U-AkG"/>
+                        <outlet property="valMaillardPhase" destination="rAy-0n-0mg" id="33f-d1-hBB"/>
                         <outlet property="valSecondCrack" destination="q2A-tZ-DoF" id="9lB-EV-wq0"/>
                         <outlet property="valYellowPhase" destination="oMf-Yh-Tdy" id="Dvm-D9-g8h"/>
                         <outlet property="viewBottomBanner" destination="WsK-Ft-54S" id="8Yh-p7-2Qe"/>
