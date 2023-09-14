@@ -28,6 +28,7 @@ class ViewControllerRDTTimer: ViewController {
     @IBOutlet var btnFirstCrack: UIButton!
     @IBOutlet var btnSecondCrack: UIButton!
     @IBOutlet var txtTimer: UITextField!
+    @IBOutlet var rdtPercent: UITextField!
     @IBOutlet var statsScrollView: UIScrollView!
     @IBOutlet var scrollViewStack: UIStackView!
     @IBOutlet var percent14: UITextField!
@@ -72,6 +73,7 @@ class ViewControllerRDTTimer: ViewController {
         txtTimer.text = "\(convertSecondsToMinSecs(dateTime: (startTime)))"
         sumRoastTime.text = txtTimer.text
         crackedCalculations()
+        rdtCalculation()
     }
     
     // sum all intervals clock has been paused since start and store for reference
@@ -309,6 +311,23 @@ class ViewControllerRDTTimer: ViewController {
             let str24Sec = (sec24 < 10) ? "0" + String(sec24) : String(sec24)
             percent24.text = "\(str24Min):\(str24Sec)"
             cracked = false
+        }
+    }
+    func rdtCalculation() {
+//        setRDT((((time - firstCrackTime) / time) * 100).toFixed(1) + "%");
+//        if (cracked) {
+            var firstCrackSeconds = 0
+            var components = (valFirstCrack.text ?? "00:00").components(separatedBy: ":")
+            
+        if (components.count == 1) {
+            rdtPercent.text = "0%"
+        } else {
+            firstCrackSeconds += Int(components[0] ?? "0")! * 60
+            firstCrackSeconds += Int(components[1] ?? "0")!
+            print ("COMPONENTS: \(components); sumRunTime: \(sumRunTime), firstCrackSeconds: \(firstCrackSeconds)")
+            rdtPercent.text = String(
+                Int(floor(((Double(sumRunTime - firstCrackSeconds))/Double(sumRunTime)) * 100))
+            ) + "%"
         }
     }
 }
